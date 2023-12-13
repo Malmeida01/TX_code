@@ -1,0 +1,39 @@
+CREATE EXTERNAL TABLE IF NOT EXISTS housing ( 
+
+`city` STRING,  
+
+`streetAddress` STRING,  
+
+`zipcode` STRING,   
+
+latitude DOUBLE,  
+
+`longitude` DOUBLE,  
+
+`hasCooling` STRING,  
+
+`homeType` STRING,  
+
+latestPrice INT,  
+
+lotSizeSqFt INT,  
+
+livingAreaSqFt INT,  
+
+numOfBathrooms INT,  
+
+numOfBedrooms INT,  
+
+numOfStories INT,  
+
+propertTaxRate INT)   
+
+ROW FORMAT DELIMITED FIELDS TERMINATED BY '\t'  
+
+LINES TERMINATED BY '\n' 
+
+STORED AS TEXTFILE LOCATION '/user/jarias68/housing'  
+
+TBLPROPERTIES ('skip.header.line.count'='1'); 
+
+select * FROM  housing LIMIT 6;
